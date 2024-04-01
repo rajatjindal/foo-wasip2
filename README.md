@@ -1,5 +1,4 @@
-export PATH=/Users/rajatjindal/go/src/github.com/tinygo-org/tinygo/build/release/tinygo/bin:$PATH
-export TINYGOROOT=~/go/src/github.com/tinygo-org/tinygo/build/release/tinygo/
+## Trying out wasip2 + TinyGo + wasm-tools-go
 
 #### generate bindings
 > using https://github.com/ydnar/wasm-tools-go/
