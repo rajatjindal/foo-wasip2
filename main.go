@@ -1,11 +1,16 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	"github.com/rajatjindal/foo-wasip2/foo-namespace/pkg/foo"
+	inboundhttp "github.com/rajatjindal/foo-wasip2/fermyon/spin/inbound-http"
 )
 
-func main() {
-	fmt.Println(foo.GreetExported())
+func init() {
+	inboundhttp.Handle(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusUnauthorized)
+		w.Write([]byte("from inside my handler"))
+	})
 }
+
+func main() {}

@@ -1,9 +1,5 @@
 package foo-namespace:pkg@2.0.0;
 
-interface foo {
-    greet: func() -> string;
-}
-
 world foo-world {
     import wasi:io/streams@0.2.0;
     import wasi:cli/stdout@0.2.0;
