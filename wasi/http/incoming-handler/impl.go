@@ -1,7 +1,6 @@
 package incominghandler
 
 import (
-	"bytes"
 	"fmt"
 	"net/http"
 	"os"
@@ -37,7 +36,7 @@ func CustomHandle(fn func(w http.ResponseWriter, r *http.Request)) {
 //export wasi:http/incoming-handler@0.2.0#handle
 func HandleExported(req *IncomingRequest, res2 *ResponseOutparam) {
 	var res = types.NewOutgoingResponse(types.NewFields())
-	var body []byte
+	// var body []byte
 	// if req.Body.Some() != nil {
 	// 	// body = []byte(req.Body.Some())
 	// }
@@ -50,7 +49,8 @@ func HandleExported(req *IncomingRequest, res2 *ResponseOutparam) {
 	pwq := req.PathWithQuery()
 	pwqp := &pwq
 	s := pwqp.Some()
-	innerRequest, err := http.NewRequest(method, *s, bytes.NewReader(body))
+	fmt.Println("url is ", *s)
+	innerRequest, err := http.NewRequest(method, *s, nil)
 	if err != nil {
 		res.SetStatusCode(http.StatusInternalServerError)
 		// return res
@@ -66,6 +66,9 @@ func HandleExported(req *IncomingRequest, res2 *ResponseOutparam) {
 	handler(w, innerRequest)
 
 	res.SetStatusCode(types.StatusCode(w.status))
+
+	// result := cm.OK[types.OutgoingResponse](res)
+	// types.ResponseOutparamSet(cm.ResourceNone, cm.ErrResult[types.OutgoingResponse, types.ErrorCode]{})
 }
 
 type innerResponse struct {
