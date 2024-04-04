@@ -1,0 +1,731 @@
+/usr/local/bin/wasm-tools component wit -j ./foo-wit
+res  &{[0x14000010040 0x14000010080 0x14000010100 0x14000010140 0x14000010180 0x14000010240 0x14000010280 0x140000102c0 0x14000010300] [0x14000078090 0x140000780f0 0x14000078120 0x14000078180 0x140000781b0 0x14000078210 0x14000078240 0x14000078270 0x140000782d0 0x140000783c0 0x14000078360 0x14000078390 0x14000078300 0x14000078330 0x14000078480 0x14000078450 0x140000783f0 0x140000784b0 0x14000078510 0x140000786f0 0x14000078540 0x14000078570 0x140000785a0 0x140000785d0 0x14000078600 0x14000078630 0x14000078660 0x14000078690 0x14000078780 0x140000787e0 0x140000787b0 0x14000078870] [0x14000010340 0x14000010380 0x140000103c0 0x14000010400 0x14000010480 0x140000104c0 0x14000010500 0x14000010540 0x1400034cf80 0x14000010580 0x140000105c0 0x14000010600 0x14000010640 0x14000010880 0x140000106c0 0x14000010780 0x14000010840 0x14000010900 0x14000010800 0x14000010a80 0x14000010ac0 0x14000010b00 0x14000010b80 0x14000010b40 0x14000010bc0 0x14000010c00 0x14000010c40 0x14000010c80 0x14000010cc0 0x14000010d00 0x14000010d40 0x14000010d80 0x14000010dc0 0x14000010e00 0x1400034d080 0x14000010e40 0x14000010e80 0x14000010ec0 0x14000010f00 0x14000010f40 0x14000010f80 0x14000010fc0 0x14000011000 0x14000011040 0x1400034d140 0x140000110c0 0x1400034d180 0x14000011140 0x140000111c0 0x14000011200 0x14000011240 0x14000011380 0x1400034d1c0 0x14000011340 0x14000011400 0x1400034d200 0x14000011440 0x140000114c0 0x1400034d240 0x14000011600 0x14000011680 0x14000011800 0x14000011880 0x1400034d280 0x140000118c0 0x14000011900 0x14000011940 0x14000011980 0x1400034d2c0 0x1400034d300 0x140000119c0 0x14000011a00 0x14000011a40 0x14000011a80 0x14000011ac0 0x14000011b00 0x14000011b40 0x14000011b80 0x14000011bc0 0x14000011c00 0x14000011c40 0x14000011cc0 0x14000011d00 0x14000011d40 0x14000011d80 0x14000011dc0 0x14000011e00 0x1400034d440 0x14000011e80 0x14000011ec0 0x1400034d480 0x14000011f00 0x14000302000 0x14000302040 0x14000302080 0x140003020c0 0x14000302100 0x14000302140 0x14000302180 0x140003021c0 0x14000302200 0x14000302240 0x14000302280 0x140003022c0 0x14000302340 0x1400034d500 0x1400034d540 0x1400034d580 0x140003023c0 0x1400034d5c0 0x1400034d600 0x14000302400 0x14000302440 0x140003024c0 0x14000302540 0x14000302600 0x14000302680 0x14000302700 0x14000302840 0x14000302880 0x140003028c0 0x14000302900 0x1400034d680 0x14000302940 0x14000302980 0x140003029c0 0x14000302a00 0x14000302a40 0x14000302a80 0x1400034d6c0 0x14000302ac0 0x14000302d00 0x14000302b00 0x14000302b40 0x14000302b80 0x14000302bc0 0x14000302c00 0x14000302c40 0x14000302cc0 0x1400034d700 0x1400034d740 0x1400034d780 0x14000302d80 0x14000302dc0 0x14000302e00 0x14000302e80 0x14000302f80 0x1400034d7c0 0x14000303000 0x14000303040 0x14000303080 0x14000303100 0x14000303140 0x14000303180 0x140003031c0 0x1400034d800 0x14000303200 0x14000011c80 0x14000011f40 0x140003027c0 0x14000302f40 0x14000303240 0x14000303280 0x1400034d840 0x140003032c0 0x14000303300 0x14000303340 0x14000303380 0x140003033c0 0x14000303440 0x140003034c0 0x14000303540 0x14000303580 0x140003035c0 0x1400034d880 0x14000303600 0x14000303640 0x1400034d8c0 0x14000303680 0x140003036c0 0x1400034d900 0x14000303700 0x14000303400 0x14000303480 0x14000303500 0x14000303740 0x14000303780 0x140003037c0 0x14000303800 0x14000303840 0x14000303880 0x140003038c0 0x1400034c240 0x1400034d940 0x14000303900 0x1400034d980 0x14000303940 0x1400034d9c0 0x14000303980 0x1400034da00 0x1400034da40 0x140003039c0 0x14000303a00 0x14000303a40 0x14000303a80 0x14000303ac0 0x14000303b00 0x14000303b40 0x14000303b80 0x14000303bc0 0x14000303c00 0x14000303c40 0x14000303c80 0x14000303cc0 0x14000303d00 0x14000303d40 0x14000303d80 0x14000303dc0 0x14000303e00 0x14000303e40 0x14000303e80 0x1400034da80 0x14000303f00 0x14000303ec0 0x14000303f40 0x1400034c000 0x1400034c080 0x1400034c140 0x1400034c200 0x1400034c280 0x1400034c840 0x1400034c300 0x1400034c380 0x1400034cac0 0x1400034c3c0 0x1400034c440 0x1400034c580 0x1400034c5c0 0x1400034c980 0x1400034c700 0x1400034c780 0x1400034c7c0 0x1400034dac0 0x1400034c800 0x1400034c8c0 0x1400034db00 0x1400034cb00 0x1400034db40 0x1400034db80 0x1400034c940 0x1400034c9c0 0x1400034ca40 0x1400034dbc0 0x1400034ca80 0x1400034cb80 0x1400034cbc0 0x1400034dc00 0x1400034dc40 0x1400034dc80 0x1400034cc00 0x1400034cc40 0x1400034cc80 0x1400034cd80 0x1400034cdc0 0x1400034ce00 0x1400034ce40 0x1400034dcc0 0x1400034cec0 0x1400034dd00 0x1400034cf40 0x1400034c2c0 0x1400034c340 0x1400034c540 0x1400034c6c0 0x1400034c880 0x1400034c900 0x1400034ccc0 0x1400034cd00 0x1400034ce80] [0x140000340c0 0x14000034120 0x14000034180 0x140000341e0 0x14000034240 0x140000342a0 0x14000034300 0x14000034360]}
+is method?  ResourceDrop
+params  []
+results  []
+is method?  ToDebugString
+params  []
+results  [{result {{{{}}}}}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  Block
+params  []
+results  []
+is method?  Ready
+params  []
+results  [{result {{{{}}}}}]
+is not a method?  Poll
+params  [{in 0x14000010480}]
+results  [{result 0x140000104c0}]
+is not a method?  Poll
+params  [{in 0x14000010480}]
+results  [{result 0x140000104c0}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  BlockingRead
+params  [{len_ {{{{}}}}}]
+results  [{result 0x140000106c0}]
+is method?  BlockingSkip
+params  [{len_ {{{{}}}}}]
+results  [{result 0x14000010780}]
+is method?  Read
+params  [{len_ {{{{}}}}}]
+results  [{result 0x140000106c0}]
+is method?  Skip
+params  [{len_ {{{{}}}}}]
+results  [{result 0x14000010780}]
+is method?  Subscribe
+params  []
+results  [{result 0x14000010800}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  BlockingFlush
+params  []
+results  [{result 0x14000010900}]
+is method?  BlockingSplice
+params  [{src 0x14000010640} {len_ {{{{}}}}}]
+results  [{result 0x14000010780}]
+is method?  BlockingWriteAndFlush
+params  [{contents 0x14000010880}]
+results  [{result 0x14000010900}]
+is method?  BlockingWriteZeroesAndFlush
+params  [{len_ {{{{}}}}}]
+results  [{result 0x14000010900}]
+is method?  CheckWrite
+params  []
+results  [{result 0x14000010780}]
+is method?  Flush
+params  []
+results  [{result 0x14000010900}]
+is method?  Splice
+params  [{src 0x14000010640} {len_ {{{{}}}}}]
+results  [{result 0x14000010780}]
+is method?  Subscribe
+params  []
+results  [{result 0x14000010800}]
+is method?  Write
+params  [{contents 0x14000010880}]
+results  [{result 0x14000010900}]
+is method?  WriteZeroes
+params  [{len_ {{{{}}}}}]
+results  [{result 0x14000010900}]
+is not a method?  Now
+params  []
+results  [{result 0x14000010ac0}]
+is not a method?  Resolution
+params  []
+results  [{result 0x14000010b00}]
+is not a method?  SubscribeDuration
+params  [{when 0x14000010b00}]
+results  [{result 0x14000010b40}]
+is not a method?  SubscribeInstant
+params  [{when 0x14000010ac0}]
+results  [{result 0x14000010b40}]
+is not a method?  Now
+params  []
+results  [{result 0x14000010ac0}]
+is not a method?  Resolution
+params  []
+results  [{result 0x14000010b00}]
+is not a method?  SubscribeDuration
+params  [{when 0x14000010b00}]
+results  [{result 0x14000010b40}]
+is not a method?  SubscribeInstant
+params  [{when 0x14000010ac0}]
+results  [{result 0x14000010b40}]
+is not a method?  Now
+params  []
+results  [{result 0x14000010b80}]
+is not a method?  Resolution
+params  []
+results  [{result 0x14000010b80}]
+is not a method?  Now
+params  []
+results  [{result 0x14000010b80}]
+is not a method?  Resolution
+params  []
+results  [{result 0x14000010b80}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  Advise
+params  [{offset 0x14000010cc0} {length 0x14000010cc0} {advice 0x14000010f40}]
+results  [{result 0x140000111c0}]
+is method?  AppendViaStream
+params  []
+results  [{result 0x14000011140}]
+is method?  CreateDirectoryAt
+params  [{path {{{{}}}}}]
+results  [{result 0x140000111c0}]
+is method?  GetFlags
+params  []
+results  [{result 0x14000011200}]
+is method?  GetType
+params  []
+results  [{result 0x14000011240}]
+is method?  IsSameObject
+params  [{other 0x14000011040}]
+results  [{result {{{{}}}}}]
+is method?  LinkAt
+params  [{oldPathFlags 0x14000010d80} {oldPath {{{{}}}}} {newDescriptor 0x14000011040} {newPath {{{{}}}}}]
+results  [{result 0x140000111c0}]
+is method?  MetadataHash
+params  []
+results  [{result 0x14000011800}]
+is method?  MetadataHashAt
+params  [{pathFlags 0x14000010d80} {path {{{{}}}}}]
+results  [{result 0x14000011800}]
+is method?  OpenAt
+params  [{pathFlags 0x14000010d80} {path {{{{}}}}} {openFlags 0x14000010dc0} {flags 0x14000010d40}]
+results  [{result 0x14000011600}]
+is method?  Read
+params  [{length 0x14000010cc0} {offset 0x14000010cc0}]
+results  [{result 0x14000011340}]
+is method?  ReadDirectory
+params  []
+results  [{result 0x14000011440}]
+is method?  ReadViaStream
+params  [{offset 0x14000010cc0}]
+results  [{result 0x140000110c0}]
+is method?  ReadLinkAt
+params  [{path {{{{}}}}}]
+results  [{result 0x14000011680}]
+is method?  RemoveDirectoryAt
+params  [{path {{{{}}}}}]
+results  [{result 0x140000111c0}]
+is method?  RenameAt
+params  [{oldPath {{{{}}}}} {newDescriptor 0x14000011040} {newPath {{{{}}}}}]
+results  [{result 0x140000111c0}]
+is method?  SetSize
+params  [{size 0x14000010cc0}]
+results  [{result 0x140000111c0}]
+is method?  SetTimes
+params  [{dataAccessTimestamp 0x14000010e80} {dataModificationTimestamp 0x14000010e80}]
+results  [{result 0x140000111c0}]
+is method?  SetTimesAt
+params  [{pathFlags 0x14000010d80} {path {{{{}}}}} {dataAccessTimestamp 0x14000010e80} {dataModificationTimestamp 0x14000010e80}]
+results  [{result 0x140000111c0}]
+is method?  Stat
+params  []
+results  [{result 0x140000114c0}]
+is method?  StatAt
+params  [{pathFlags 0x14000010d80} {path {{{{}}}}}]
+results  [{result 0x140000114c0}]
+is method?  SymlinkAt
+params  [{oldPath {{{{}}}}} {newPath {{{{}}}}}]
+results  [{result 0x140000111c0}]
+is method?  Sync
+params  []
+results  [{result 0x140000111c0}]
+is method?  SyncData
+params  []
+results  [{result 0x140000111c0}]
+is method?  UnlinkFileAt
+params  [{path {{{{}}}}}]
+results  [{result 0x140000111c0}]
+is method?  Write
+params  [{buffer 0x14000011380} {offset 0x14000010cc0}]
+results  [{result 0x14000011400}]
+is method?  WriteViaStream
+params  [{offset 0x14000010cc0}]
+results  [{result 0x14000011140}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  ReadDirectoryEntry
+params  []
+results  [{result 0x140000118c0}]
+is not a method?  FilesystemErrorCode
+params  [{err 0x14000011900}]
+results  [{result 0x14000011940}]
+is not a method?  FilesystemErrorCode
+params  [{err 0x14000011900}]
+results  [{result 0x14000011940}]
+is not a method?  GetDirectories
+params  []
+results  [{result 0x140000119c0}]
+is not a method?  GetDirectories
+params  []
+results  [{result 0x140000119c0}]
+is method?  ResourceDrop
+params  []
+results  []
+is not a method?  InstanceNetwork
+params  []
+results  [{result 0x14000011c80}]
+is not a method?  InstanceNetwork
+params  []
+results  [{result 0x14000011c80}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  ResolveNextAddress
+params  []
+results  [{result 0x14000011f00}]
+is method?  Subscribe
+params  []
+results  [{result 0x14000011f40}]
+is not a method?  ResolveAddresses
+params  [{network_ 0x14000011e00} {name {{{{}}}}}]
+results  [{result 0x14000011e80}]
+is not a method?  ResolveAddresses
+params  [{network_ 0x14000011e00} {name {{{{}}}}}]
+results  [{result 0x14000011e80}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  Accept
+params  []
+results  [{result 0x14000302400}]
+is method?  AddressFamily
+params  []
+results  [{result 0x140003021c0}]
+is method?  FinishBind
+params  []
+results  [{result 0x14000302340}]
+is method?  FinishConnect
+params  []
+results  [{result 0x140003023c0}]
+is method?  FinishListen
+params  []
+results  [{result 0x14000302340}]
+is method?  HopLimit
+params  []
+results  [{result 0x14000302680}]
+is method?  IsListening
+params  []
+results  [{result {{{{}}}}}]
+is method?  KeepAliveCount
+params  []
+results  [{result 0x14000302600}]
+is method?  KeepAliveEnabled
+params  []
+results  [{result 0x140003024c0}]
+is method?  KeepAliveIdleTime
+params  []
+results  [{result 0x14000302540}]
+is method?  KeepAliveInterval
+params  []
+results  [{result 0x14000302540}]
+is method?  LocalAddress
+params  []
+results  [{result 0x14000302440}]
+is method?  ReceiveBufferSize
+params  []
+results  [{result 0x14000302700}]
+is method?  RemoteAddress
+params  []
+results  [{result 0x14000302440}]
+is method?  SendBufferSize
+params  []
+results  [{result 0x14000302700}]
+is method?  SetHopLimit
+params  [{value {{{{}}}}}]
+results  [{result 0x14000302340}]
+is method?  SetKeepAliveCount
+params  [{value {{{{}}}}}]
+results  [{result 0x14000302340}]
+is method?  SetKeepAliveEnabled
+params  [{value {{{{}}}}}]
+results  [{result 0x14000302340}]
+is method?  SetKeepAliveIdleTime
+params  [{value 0x140003020c0}]
+results  [{result 0x14000302340}]
+is method?  SetKeepAliveInterval
+params  [{value 0x140003020c0}]
+results  [{result 0x14000302340}]
+is method?  SetListenBacklogSize
+params  [{value {{{{}}}}}]
+results  [{result 0x14000302340}]
+is method?  SetReceiveBufferSize
+params  [{value {{{{}}}}}]
+results  [{result 0x14000302340}]
+is method?  SetSendBufferSize
+params  [{value {{{{}}}}}]
+results  [{result 0x14000302340}]
+is method?  Shutdown
+params  [{shutdownType 0x14000302200}]
+results  [{result 0x14000302340}]
+is method?  StartBind
+params  [{network_ 0x140003022c0} {localAddress 0x14000302180}]
+results  [{result 0x14000302340}]
+is method?  StartConnect
+params  [{network_ 0x140003022c0} {remoteAddress 0x14000302180}]
+results  [{result 0x14000302340}]
+is method?  StartListen
+params  []
+results  [{result 0x14000302340}]
+is method?  Subscribe
+params  []
+results  [{result 0x140003027c0}]
+is not a method?  CreateTCPSocket
+params  [{addressFamily 0x140003028c0}]
+results  [{result 0x14000302940}]
+is not a method?  CreateTCPSocket
+params  [{addressFamily 0x140003028c0}]
+results  [{result 0x14000302940}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  Receive
+params  [{maxResults {{{{}}}}}]
+results  [{result 0x14000303000}]
+is method?  Subscribe
+params  []
+results  [{result 0x14000302f40}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  CheckSend
+params  []
+results  [{result 0x14000302e80}]
+is method?  Send
+params  [{datagrams 0x14000303080}]
+results  [{result 0x14000302e80}]
+is method?  Subscribe
+params  []
+results  [{result 0x14000302f40}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  AddressFamily
+params  []
+results  [{result 0x14000302a80}]
+is method?  FinishBind
+params  []
+results  [{result 0x14000302cc0}]
+is method?  LocalAddress
+params  []
+results  [{result 0x14000302dc0}]
+is method?  ReceiveBufferSize
+params  []
+results  [{result 0x14000302e80}]
+is method?  RemoteAddress
+params  []
+results  [{result 0x14000302dc0}]
+is method?  SendBufferSize
+params  []
+results  [{result 0x14000302e80}]
+is method?  SetReceiveBufferSize
+params  [{value {{{{}}}}}]
+results  [{result 0x14000302cc0}]
+is method?  SetSendBufferSize
+params  [{value {{{{}}}}}]
+results  [{result 0x14000302cc0}]
+is method?  SetUnicastHopLimit
+params  [{value {{{{}}}}}]
+results  [{result 0x14000302cc0}]
+is method?  StartBind
+params  [{network_ 0x14000302c40} {localAddress 0x14000302a40}]
+results  [{result 0x14000302cc0}]
+is method?  Stream
+params  [{remoteAddress 0x14000302d00}]
+results  [{result 0x14000302d80}]
+is method?  Subscribe
+params  []
+results  [{result 0x14000302f40}]
+is method?  UnicastHopLimit
+params  []
+results  [{result 0x14000302e00}]
+is not a method?  CreateUDPSocket
+params  [{addressFamily 0x14000303180}]
+results  [{result 0x14000303200}]
+is not a method?  CreateUDPSocket
+params  [{addressFamily 0x14000303180}]
+results  [{result 0x14000303200}]
+is not a method?  InsecureSeed
+params  []
+results  [{result 0x14000303240}]
+is not a method?  InsecureSeed
+params  []
+results  [{result 0x14000303240}]
+is not a method?  GetInsecureRandomBytes
+params  [{len_ {{{{}}}}}]
+results  [{result 0x14000303280}]
+is not a method?  GetInsecureRandomU64
+params  []
+results  [{result {{{{}}}}}]
+is not a method?  GetInsecureRandomBytes
+params  [{len_ {{{{}}}}}]
+results  [{result 0x14000303280}]
+is not a method?  GetInsecureRandomU64
+params  []
+results  [{result {{{{}}}}}]
+is not a method?  GetRandomBytes
+params  [{len_ {{{{}}}}}]
+results  [{result 0x14000303280}]
+is not a method?  GetRandomU64
+params  []
+results  [{result {{{{}}}}}]
+is not a method?  GetRandomBytes
+params  [{len_ {{{{}}}}}]
+results  [{result 0x14000303280}]
+is not a method?  GetRandomU64
+params  []
+results  [{result {{{{}}}}}]
+is not a method?  GetArguments
+params  []
+results  [{result 0x14000303300}]
+is not a method?  GetEnvironment
+params  []
+results  [{result 0x140003032c0}]
+is not a method?  InitialCWD
+params  []
+results  [{result 0x14000303340}]
+is not a method?  GetArguments
+params  []
+results  [{result 0x14000303300}]
+is not a method?  GetEnvironment
+params  []
+results  [{result 0x140003032c0}]
+is not a method?  InitialCWD
+params  []
+results  [{result 0x14000303340}]
+is not a method?  Exit
+params  [{status 0x14000303380}]
+results  []
+is not a method?  Exit
+params  [{status 0x14000303380}]
+results  []
+is not a method?  Run
+params  []
+results  [{result 0x14000303380}]
+is not a method?  Run
+params  []
+results  [{result 0x14000303380}]
+is not a method?  GetStdin
+params  []
+results  [{result 0x14000303400}]
+is not a method?  GetStdin
+params  []
+results  [{result 0x14000303400}]
+is not a method?  GetStdout
+params  []
+results  [{result 0x14000303480}]
+is not a method?  GetStdout
+params  []
+results  [{result 0x14000303480}]
+is not a method?  GetStderr
+params  []
+results  [{result 0x14000303500}]
+is not a method?  GetStderr
+params  []
+results  [{result 0x14000303500}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  ResourceDrop
+params  []
+results  []
+is not a method?  GetTerminalStdin
+params  []
+results  [{result 0x14000303600}]
+is not a method?  GetTerminalStdin
+params  []
+results  [{result 0x14000303600}]
+is not a method?  GetTerminalStdout
+params  []
+results  [{result 0x14000303680}]
+is not a method?  GetTerminalStdout
+params  []
+results  [{result 0x14000303680}]
+is not a method?  GetTerminalStderr
+params  []
+results  [{result 0x14000303700}]
+is not a method?  GetTerminalStderr
+params  []
+results  [{result 0x14000303700}]
+is method?  ResourceDrop
+params  []
+results  []
+is not a method?  NewFields
+params  []
+results  [{result 0x14000303ec0}]
+is not a method?  FieldsFromList
+params  [{entries 0x14000303f00}]
+results  [{result 0x14000303f40}]
+is method?  Append
+params  [{name 0x14000303a40} {value 0x14000303a80}]
+results  [{result 0x1400034c140}]
+is method?  Clone
+params  []
+results  [{result 0x14000303ec0}]
+is method?  Delete
+params  [{name 0x14000303a40}]
+results  [{result 0x1400034c140}]
+is method?  Entries
+params  []
+results  [{result 0x14000303f00}]
+is method?  Get
+params  [{name 0x14000303a40}]
+results  [{result 0x1400034c080}]
+is method?  Has
+params  [{name 0x14000303a40}]
+results  [{result {{{{}}}}}]
+is method?  Set
+params  [{name 0x14000303a40} {value 0x1400034c080}]
+results  [{result 0x1400034c140}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  Get
+params  []
+results  [{result 0x1400034cc00}]
+is method?  Subscribe
+params  []
+results  [{result 0x1400034c900}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  Get
+params  []
+results  [{result 0x1400034c940}]
+is method?  Subscribe
+params  []
+results  [{result 0x1400034c900}]
+is method?  ResourceDrop
+params  []
+results  []
+is not a method?  IncomingBodyFinish
+params  [{this 0x1400034c840}]
+results  [{result 0x1400034c880}]
+is method?  Stream
+params  []
+results  [{result 0x1400034c800}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  Authority
+params  []
+results  [{result 0x1400034c240}]
+is method?  Consume
+params  []
+results  [{result 0x1400034c300}]
+is method?  Headers
+params  []
+results  [{result 0x1400034c2c0}]
+is method?  Method
+params  []
+results  [{result 0x14000303880}]
+is method?  PathWithQuery
+params  []
+results  [{result 0x1400034c240}]
+is method?  Scheme
+params  []
+results  [{result 0x1400034c280}]
+is method?  ResourceDrop
+params  []
+results  []
+is method?  Consume
+params  []
+results  [{result 0x1400034c300}]
+is method?  Headers
+params  []
+results  [{result 0x1400034c2c0}]
+is method?  Status
+params  []
+results  [{result 0x14000303c80}]
+is method?  ResourceDrop
+params  []
+results  []
+is not a method?  OutgoingBodyFinish
+params  [{this 0x1400034cac0} {trailers 0x1400034cb00}]
+results  [{result 0x1400034cb80}]
+is method?  Write
+params  []
+results  [{result 0x1400034ca80}]
+is method?  ResourceDrop
+params  []
+results  []
+is not a method?  NewOutgoingRequest
+params  [{headers 0x1400034c2c0}]
+results  [{result 0x1400034c340}]
+is method?  Authority
+params  []
+results  [{result 0x1400034c240}]
+is method?  Body
+params  []
+results  [{result 0x1400034c3c0}]
+is method?  Headers
+params  []
+results  [{result 0x1400034c2c0}]
+is method?  Method
+params  []
+results  [{result 0x14000303880}]
+is method?  PathWithQuery
+params  []
+results  [{result 0x1400034c240}]
+is method?  Scheme
+params  []
+results  [{result 0x1400034c280}]
+is method?  SetAuthority
+params  [{authority 0x1400034c240}]
+results  [{result 0x1400034c440}]
+is method?  SetMethod
+params  [{method 0x14000303880}]
+results  [{result 0x1400034c440}]
+is method?  SetPathWithQuery
+params  [{pathWithQuery 0x1400034c240}]
+results  [{result 0x1400034c440}]
+is method?  SetScheme
+params  [{scheme 0x1400034c280}]
+results  [{result 0x1400034c440}]
+is method?  ResourceDrop
+params  []
+results  []
+is not a method?  NewOutgoingResponse
+params  [{headers 0x1400034c2c0}]
+results  [{result 0x1400034c980}]
+is method?  Body
+params  []
+results  [{result 0x1400034c3c0}]
+is method?  Headers
+params  []
+results  [{result 0x1400034c2c0}]
+is method?  SetStatusCode
+params  [{statusCode 0x14000303c80}]
+results  [{result 0x1400034c440}]
+is method?  StatusCode
+params  []
+results  [{result 0x14000303c80}]
+is method?  ResourceDrop
+params  []
+results  []
+is not a method?  NewRequestOptions
+params  []
+results  [{result 0x1400034c540}]
+is method?  BetweenBytesTimeout
+params  []
+results  [{result 0x1400034c5c0}]
+is method?  ConnectTimeout
+params  []
+results  [{result 0x1400034c5c0}]
+is method?  FirstByteTimeout
+params  []
+results  [{result 0x1400034c5c0}]
+is method?  SetBetweenBytesTimeout
+params  [{duration 0x1400034c5c0}]
+results  [{result 0x1400034c440}]
+is method?  SetConnectTimeout
+params  [{duration 0x1400034c5c0}]
+results  [{result 0x1400034c440}]
+is method?  SetFirstByteTimeout
+params  [{duration 0x1400034c5c0}]
+results  [{result 0x1400034c440}]
+is method?  ResourceDrop
+params  []
+results  []
+is not a method?  ResponseOutparamSet
+params  [{param 0x1400034c6c0} {response 0x1400034c700}]
+results  []
+is not a method?  HTTPErrorCode
+params  [{err 0x14000303e40}]
+results  [{result 0x14000303e80}]
+is not a method?  NewFields
+params  []
+results  [{result 0x14000303ec0}]
+is not a method?  NewOutgoingRequest
+params  [{headers 0x1400034c2c0}]
+results  [{result 0x1400034c340}]
+is not a method?  NewOutgoingResponse
+params  [{headers 0x1400034c2c0}]
+results  [{result 0x1400034c980}]
+is not a method?  NewRequestOptions
+params  []
+results  [{result 0x1400034c540}]
+is not a method?  FieldsFromList
+params  [{entries 0x14000303f00}]
+results  [{result 0x14000303f40}]
+is not a method?  IncomingBodyFinish
+params  [{this 0x1400034c840}]
+results  [{result 0x1400034c880}]
+is not a method?  OutgoingBodyFinish
+params  [{this 0x1400034cac0} {trailers 0x1400034cb00}]
+results  [{result 0x1400034cb80}]
+is not a method?  ResponseOutparamSet
+params  [{param 0x1400034c6c0} {response 0x1400034c700}]
+results  []
+is not a method?  HTTPErrorCode
+params  [{err 0x14000303e40}]
+results  [{result 0x14000303e80}]
+is not a method?  Handle
+params  [{request 0x1400034ccc0} {responseOut 0x1400034cd00}]
+results  []
+is not a method?  Handle
+params  [{request 0x1400034ccc0} {responseOut 0x1400034cd00}]
+results  []
+is not a method?  Handle
+params  [{request 0x1400034ce80} {options 0x1400034cec0}]
+results  [{result 0x1400034cf40}]
+is not a method?  Handle
+params  [{request 0x1400034ce80} {options 0x1400034cec0}]
+results  [{result 0x1400034cf40}]
+is not a method?  Greet
+params  []
+results  [{result {{{{}}}}}]
+is not a method?  Greet
+params  []
+results  [{result {{{{}}}}}]

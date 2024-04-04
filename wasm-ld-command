@@ -1,0 +1,18 @@
+
+
+wasm-ld \
+--stack-first \
+--no-demangle \
+-L /Users/rajatjindal/go/src/github.com/tinygo-org/tinygo/build/release/tinygo/ \
+-o /var/folders/5r/6y6fr12x1dq6qnt74zn4_1wm0000gn/T/tinygo226195887/main \
+/var/folders/5r/6y6fr12x1dq6qnt74zn4_1wm0000gn/T/tinygo226195887/main.o \
+/Users/rajatjindal/Library/Caches/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a \
+/Users/rajatjindal/Library/Caches/tinygo/obj-363c24a529264e57aec91eacb3cbc247bacb915b67966242e30f7fb9.bc \
+/Users/rajatjindal/Library/Caches/tinygo/obj-870ef2ac5a778e9704c61e87bde8b24392ff596a3b0126fe5821e7b1.bc \
+/Users/rajatjindal/Library/Caches/tinygo/wasmbuiltins-wasm32-unknown-wasi-generic/lib.a \
+-mllvm \
+-mcpu=generic \
+--lto-O2 \
+--thinlto-cache-dir=/Users/rajatjindal/Library/Caches/tinygo/thinlto \
+-mllvm \
+--rotation-max-header-size=0
