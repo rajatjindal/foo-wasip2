@@ -1,21 +1,89 @@
 package incominghandler
 
-func init() {
-	instance = &Impl{}
+import (
+	"bytes"
+	"fmt"
+	"net/http"
+	"os"
+
+	"github.com/rajatjindal/foo-wasip2/wasi/http/types"
+)
+
+// func init() {
+// 	instance = &Impl{}
+// }
+
+// type Impl struct{}
+
+// func (i *Impl) HandleRequest(req Request) Response {
+// 	instance.
+// }
+
+// //export foo-namespace:pkg/foo@2.0.0#greet
+// func GreetExported() *string {
+// 	x := instance.Greet()
+// 	return &x
+// }
+
+var handler = defaultHandler
+var defaultHandler = func(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(os.Stderr, "http handler undefined")
 }
 
-type Impl struct{}
-
-func (i *Impl) Handle() string {
-	return "hello from greet in main.go"
+func CustomHandle(fn func(w http.ResponseWriter, r *http.Request)) {
+	handler = fn
 }
 
-//export foo-namespace:pkg/foo@2.0.0#greet
-func GreetExported() *string {
-	x := instance.Greet()
-	return &x
+//export wasi:http/incoming-handler@0.2.0#handle
+func HandleExported(req *IncomingRequest, res2 *ResponseOutparam) {
+	var res = types.NewOutgoingResponse(types.NewFields())
+	var body []byte
+	// if req.Body.Some() != nil {
+	// 	// body = []byte(req.Body.Some())
+	// }
+
+	var method string
+	if req.Method() == types.MethodGet() {
+		method = "GET"
+	}
+
+	pwq := req.PathWithQuery()
+	pwqp := &pwq
+	s := pwqp.Some()
+	innerRequest, err := http.NewRequest(method, *s, bytes.NewReader(body))
+	if err != nil {
+		res.SetStatusCode(http.StatusInternalServerError)
+		// return res
+		return
+	}
+
+	// for k, v := range req.Headers.(cm.List).Data() {
+
+	// }
+
+	w := &innerResponse{}
+
+	handler(w, innerRequest)
+
+	res.SetStatusCode(types.StatusCode(w.status))
 }
 
-func HandleExported(*IncomingRequest, *ResponseOutparam) {
+type innerResponse struct {
+	status int
+	body   []byte
+	header http.Header
+}
 
+func (i *innerResponse) Header() http.Header {
+	i.header = http.Header{}
+	return i.header
+}
+
+func (i *innerResponse) Write(b []byte) (int, error) {
+	i.body = b
+	return 0, nil
+}
+
+func (i *innerResponse) WriteHeader(statusCode int) {
+	i.status = statusCode
 }
