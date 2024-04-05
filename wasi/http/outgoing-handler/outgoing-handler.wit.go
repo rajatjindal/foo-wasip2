@@ -46,8 +46,8 @@ type RequestOptions = types.RequestOptions
 // or not allowed to be made. Otherwise, protocol errors are reported
 // through the `future-incoming-response`.
 //
-//	handle: func(request: own<outgoing-request>, options: option<own<request-options>>)
-//	-> result<own<future-incoming-response>, error-code>
+//	handle: func(request: outgoing-request, options: option<request-options>) -> result<future-incoming-response,
+//	error-code>
 //
 //go:nosplit
 func Handle(request OutgoingRequest, options cm.Option[RequestOptions]) cm.ErrResult[FutureIncomingResponse, ErrorCode] {

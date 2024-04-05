@@ -16,7 +16,7 @@ type OutputStream = streams.OutputStream
 
 // GetStderr represents function "wasi:cli/stderr@0.2.0#get-stderr".
 //
-//	get-stderr: func() -> own<output-stream>
+//	get-stderr: func() -> output-stream
 //
 //go:nosplit
 func GetStderr() OutputStream {

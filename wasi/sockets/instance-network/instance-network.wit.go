@@ -20,7 +20,7 @@ type Network = network.Network
 //
 // Get a handle to the default network.
 //
-//	instance-network: func() -> own<network>
+//	instance-network: func() -> network
 //
 //go:nosplit
 func InstanceNetwork() Network {

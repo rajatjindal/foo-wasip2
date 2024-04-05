@@ -19,7 +19,7 @@ type Descriptor = types.Descriptor
 //
 // Return the set of preopened directories, and their path.
 //
-//	get-directories: func() -> list<tuple<own<descriptor>, string>>
+//	get-directories: func() -> list<tuple<descriptor, string>>
 //
 //go:nosplit
 func GetDirectories() cm.List[cm.Tuple[Descriptor, string]] {

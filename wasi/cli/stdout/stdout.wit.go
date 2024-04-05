@@ -16,7 +16,7 @@ type OutputStream = streams.OutputStream
 
 // GetStdout represents function "wasi:cli/stdout@0.2.0#get-stdout".
 //
-//	get-stdout: func() -> own<output-stream>
+//	get-stdout: func() -> output-stream
 //
 //go:nosplit
 func GetStdout() OutputStream {

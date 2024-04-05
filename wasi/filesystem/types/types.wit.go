@@ -132,7 +132,7 @@ func (self Descriptor) wasmimport_Advise(offset FileSize, length FileSize, advic
 // Note: This allows using `write-stream`, which is similar to `write` with
 // `O_APPEND` in in POSIX.
 //
-//	append-via-stream: func() -> result<own<output-stream>, error-code>
+//	append-via-stream: func() -> result<output-stream, error-code>
 //
 //go:nosplit
 func (self Descriptor) AppendViaStream() cm.OKResult[OutputStream, ErrorCode] {
@@ -330,7 +330,7 @@ func (self Descriptor) wasmimport_MetadataHashAt(pathFlags PathFlags, path strin
 // Note: This is similar to `openat` in POSIX.
 //
 //	open-at: func(path-flags: path-flags, path: string, open-flags: open-flags, flags:
-//	descriptor-flags) -> result<own<descriptor>, error-code>
+//	descriptor-flags) -> result<descriptor, error-code>
 //
 //go:nosplit
 func (self Descriptor) OpenAt(pathFlags PathFlags, path string, openFlags OpenFlags, flags DescriptorFlags) cm.OKResult[Descriptor, ErrorCode] {
@@ -383,7 +383,7 @@ func (self Descriptor) wasmimport_Read(length FileSize, offset FileSize, result 
 // directory. Multiple streams may be active on the same directory, and they
 // do not interfere with each other.
 //
-//	read-directory: func() -> result<own<directory-entry-stream>, error-code>
+//	read-directory: func() -> result<directory-entry-stream, error-code>
 //
 //go:nosplit
 func (self Descriptor) ReadDirectory() cm.OKResult[DirectoryEntryStream, ErrorCode] {
@@ -407,7 +407,7 @@ func (self Descriptor) wasmimport_ReadDirectory(result *cm.OKResult[DirectoryEnt
 //
 // Note: This allows using `read-stream`, which is similar to `read` in POSIX.
 //
-//	read-via-stream: func(offset: filesize) -> result<own<input-stream>, error-code>
+//	read-via-stream: func(offset: filesize) -> result<input-stream, error-code>
 //
 //go:nosplit
 func (self Descriptor) ReadViaStream(offset FileSize) cm.OKResult[InputStream, ErrorCode] {
@@ -717,7 +717,7 @@ func (self Descriptor) wasmimport_Write(buffer cm.List[uint8], offset FileSize, 
 // Note: This allows using `write-stream`, which is similar to `write` in
 // POSIX.
 //
-//	write-via-stream: func(offset: filesize) -> result<own<output-stream>, error-code>
+//	write-via-stream: func(offset: filesize) -> result<output-stream, error-code>
 //
 //go:nosplit
 func (self Descriptor) WriteViaStream(offset FileSize) cm.OKResult[OutputStream, ErrorCode] {

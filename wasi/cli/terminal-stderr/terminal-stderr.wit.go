@@ -23,7 +23,7 @@ type TerminalOutput = terminaloutput.TerminalOutput
 // If stderr is connected to a terminal, return a `terminal-output` handle
 // allowing further interaction with it.
 //
-//	get-terminal-stderr: func() -> option<own<terminal-output>>
+//	get-terminal-stderr: func() -> option<terminal-output>
 //
 //go:nosplit
 func GetTerminalStderr() cm.Option[TerminalOutput] {

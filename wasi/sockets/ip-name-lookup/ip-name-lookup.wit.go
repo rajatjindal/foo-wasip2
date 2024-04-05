@@ -88,7 +88,7 @@ func (self ResolveAddressStream) wasmimport_ResolveNextAddress(result *cm.OKResu
 // Note: this function is here for WASI Preview2 only.
 // It's planned to be removed when `future` is natively supported in Preview3.
 //
-//	subscribe: func() -> own<pollable>
+//	subscribe: func() -> pollable
 //
 //go:nosplit
 func (self ResolveAddressStream) Subscribe() Pollable {
@@ -122,7 +122,7 @@ func (self ResolveAddressStream) wasmimport_Subscribe() Pollable
 // - <https://learn.microsoft.com/en-us/windows/win32/api/ws2tcpip/nf-ws2tcpip-getaddrinfo>
 // - <https://man.freebsd.org/cgi/man.cgi?query=getaddrinfo&sektion=3>
 //
-//	resolve-addresses: func(network: borrow<network>, name: string) -> result<own<resolve-address-stream>,
+//	resolve-addresses: func(network: borrow<network>, name: string) -> result<resolve-address-stream,
 //	error-code>
 //
 //go:nosplit

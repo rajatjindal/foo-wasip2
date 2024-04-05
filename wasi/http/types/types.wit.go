@@ -609,7 +609,7 @@ func wasmimport_NewFields() Fields
 // An error result will be returned if any header or value was
 // syntactically invalid, or if a header was forbidden.
 //
-//	from-list: static func(entries: list<tuple<field-key, field-value>>) -> result<own<fields>,
+//	from-list: static func(entries: list<tuple<field-key, field-value>>) -> result<fields,
 //	header-error>
 //
 //go:nosplit
@@ -649,7 +649,7 @@ func (self Fields) wasmimport_Append(name FieldKey, value FieldValue, result *cm
 // `fields` constructor on the return value of `entries`. The resulting
 // `fields` is mutable.
 //
-//	clone: func() -> own<fields>
+//	clone: func() -> fields
 //
 //go:nosplit
 func (self Fields) Clone() Fields {
@@ -799,7 +799,7 @@ func (self FutureIncomingResponse) wasmimport_ResourceDrop()
 // but those will be reported by the `incoming-body` and its
 // `output-stream` child.
 //
-//	get: func() -> option<result<result<own<incoming-response>, error-code>>>
+//	get: func() -> option<result<result<incoming-response, error-code>>>
 //
 //go:nosplit
 func (self FutureIncomingResponse) Get() cm.Option[cm.OKResult[cm.ErrResult[IncomingResponse, ErrorCode], struct{}]] {
@@ -818,7 +818,7 @@ func (self FutureIncomingResponse) wasmimport_Get(result *cm.Option[cm.OKResult[
 // been received, or an error has occured. When this pollable is ready,
 // the `get` method will return `some`.
 //
-//	subscribe: func() -> own<pollable>
+//	subscribe: func() -> pollable
 //
 //go:nosplit
 func (self FutureIncomingResponse) Subscribe() Pollable {
@@ -875,7 +875,7 @@ func (self FutureTrailers) wasmimport_ResourceDrop()
 // `delete` methods will return an error, and the resource must be
 // dropped before the parent `future-trailers` is dropped.
 //
-//	get: func() -> option<result<result<option<own<trailers>>, error-code>>>
+//	get: func() -> option<result<result<option<trailers>, error-code>>>
 //
 //go:nosplit
 func (self FutureTrailers) Get() cm.Option[cm.OKResult[cm.ErrResult[cm.Option[Trailers], ErrorCode], struct{}]] {
@@ -894,7 +894,7 @@ func (self FutureTrailers) wasmimport_Get(result *cm.Option[cm.OKResult[cm.ErrRe
 // been received, or an error has occured. When this pollable is ready,
 // the `get` method will return `some`.
 //
-//	subscribe: func() -> own<pollable>
+//	subscribe: func() -> pollable
 //
 //go:nosplit
 func (self FutureTrailers) Subscribe() Pollable {
@@ -969,7 +969,7 @@ func (self IncomingBody) wasmimport_ResourceDrop()
 // Takes ownership of `incoming-body`, and returns a `future-trailers`.
 // This function will trap if the `input-stream` child is still alive.
 //
-//	finish: static func(this: own<incoming-body>) -> own<future-trailers>
+//	finish: static func(this: incoming-body) -> future-trailers
 //
 //go:nosplit
 func IncomingBodyFinish(this IncomingBody) FutureTrailers {
@@ -998,7 +998,7 @@ func wasmimport_IncomingBodyFinish(this IncomingBody) FutureTrailers
 // and for that backpressure to not inhibit delivery of the trailers if
 // the user does not read the entire body.
 //
-//	stream: func() -> result<own<input-stream>>
+//	stream: func() -> result<input-stream>
 //
 //go:nosplit
 func (self IncomingBody) Stream() cm.OKResult[InputStream, struct{}] {
@@ -1053,7 +1053,7 @@ func (self IncomingRequest) wasmimport_Authority(result *cm.Option[string])
 // Gives the `incoming-body` associated with this request. Will only
 // return success at most once, and subsequent calls will return error.
 //
-//	consume: func() -> result<own<incoming-body>>
+//	consume: func() -> result<incoming-body>
 //
 //go:nosplit
 func (self IncomingRequest) Consume() cm.OKResult[IncomingBody, struct{}] {
@@ -1077,7 +1077,7 @@ func (self IncomingRequest) wasmimport_Consume(result *cm.OKResult[IncomingBody,
 // the parent `incoming-request` is dropped. Dropping this
 // `incoming-request` before all children are dropped will trap.
 //
-//	headers: func() -> own<headers>
+//	headers: func() -> headers
 //
 //go:nosplit
 func (self IncomingRequest) Headers() Headers {
@@ -1164,7 +1164,7 @@ func (self IncomingResponse) wasmimport_ResourceDrop()
 // Returns the incoming body. May be called at most once. Returns error
 // if called additional times.
 //
-//	consume: func() -> result<own<incoming-body>>
+//	consume: func() -> result<incoming-body>
 //
 //go:nosplit
 func (self IncomingResponse) Consume() cm.OKResult[IncomingBody, struct{}] {
@@ -1187,7 +1187,7 @@ func (self IncomingResponse) wasmimport_Consume(result *cm.OKResult[IncomingBody
 // This headers resource is a child: it must be dropped before the parent
 // `incoming-response` is dropped.
 //
-//	headers: func() -> own<headers>
+//	headers: func() -> headers
 //
 //go:nosplit
 func (self IncomingResponse) Headers() Headers {
@@ -1397,8 +1397,8 @@ func (self OutgoingBody) wasmimport_ResourceDrop()
 // to the body (via `write`) does not match the value given in the
 // Content-Length.
 //
-//	finish: static func(this: own<outgoing-body>, trailers: option<own<trailers>>)
-//	-> result<_, error-code>
+//	finish: static func(this: outgoing-body, trailers: option<trailers>) -> result<_,
+//	error-code>
 //
 //go:nosplit
 func OutgoingBodyFinish(this OutgoingBody, trailers cm.Option[Trailers]) cm.ErrResult[struct{}, ErrorCode] {
@@ -1423,7 +1423,7 @@ func wasmimport_OutgoingBodyFinish(this OutgoingBody, trailers cm.Option[Trailer
 // this `outgoing-body` may be retrieved at most once. Subsequent calls
 // will return error.
 //
-//	write: func() -> result<own<output-stream>>
+//	write: func() -> result<output-stream>
 //
 //go:nosplit
 func (self OutgoingBody) Write() cm.OKResult[OutputStream, struct{}] {
@@ -1469,7 +1469,7 @@ func (self OutgoingRequest) wasmimport_ResourceDrop()
 // It is the obligation of the `outgoing-handler.handle` implementation
 // to reject invalid constructions of `outgoing-request`.
 //
-//	[constructor]outgoing-request(headers: own<headers>)
+//	[constructor]outgoing-request(headers: headers)
 //
 //go:nosplit
 func NewOutgoingRequest(headers Headers) OutgoingRequest {
@@ -1508,7 +1508,7 @@ func (self OutgoingRequest) wasmimport_Authority(result *cm.Option[string])
 // this `outgoing-request` can be retrieved at most once. Subsequent
 // calls will return error.
 //
-//	body: func() -> result<own<outgoing-body>>
+//	body: func() -> result<outgoing-body>
 //
 //go:nosplit
 func (self OutgoingRequest) Body() cm.OKResult[OutgoingBody, struct{}] {
@@ -1532,7 +1532,7 @@ func (self OutgoingRequest) wasmimport_Body(result *cm.OKResult[OutgoingBody, st
 // `outgoing-request` is dropped, or its ownership is transfered to
 // another component by e.g. `outgoing-handler.handle`.
 //
-//	headers: func() -> own<headers>
+//	headers: func() -> headers
 //
 //go:nosplit
 func (self OutgoingRequest) Headers() Headers {
@@ -1692,7 +1692,7 @@ func (self OutgoingResponse) wasmimport_ResourceDrop()
 //
 // * `headers` is the HTTP Headers for the Response.
 //
-//	[constructor]outgoing-response(headers: own<headers>)
+//	[constructor]outgoing-response(headers: headers)
 //
 //go:nosplit
 func NewOutgoingResponse(headers Headers) OutgoingResponse {
@@ -1711,7 +1711,7 @@ func wasmimport_NewOutgoingResponse(headers Headers) OutgoingResponse
 // this `outgoing-response` can be retrieved at most once. Subsequent
 // calls will return error.
 //
-//	body: func() -> result<own<outgoing-body>>
+//	body: func() -> result<outgoing-body>
 //
 //go:nosplit
 func (self OutgoingResponse) Body() cm.OKResult[OutgoingBody, struct{}] {
@@ -1735,7 +1735,7 @@ func (self OutgoingResponse) wasmimport_Body(result *cm.OKResult[OutgoingBody, s
 // `outgoing-request` is dropped, or its ownership is transfered to
 // another component by e.g. `outgoing-handler.handle`.
 //
-//	headers: func() -> own<headers>
+//	headers: func() -> headers
 //
 //go:nosplit
 func (self OutgoingResponse) Headers() Headers {
@@ -1964,7 +1964,7 @@ func (self ResponseOutparam) wasmimport_ResourceDrop()
 // The user may provide an `error` to `response` to allow the
 // implementation determine how to respond with an HTTP error response.
 //
-//	set: static func(param: own<response-outparam>, response: result<own<outgoing-response>,
+//	set: static func(param: response-outparam, response: result<outgoing-response,
 //	error-code>)
 //
 //go:nosplit

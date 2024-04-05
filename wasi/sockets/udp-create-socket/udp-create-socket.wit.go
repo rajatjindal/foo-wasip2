@@ -59,7 +59,7 @@ type UDPSocket = udp.UDPSocket
 // - <https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-wsasocketw>
 // - <https://man.freebsd.org/cgi/man.cgi?query=socket&sektion=2>
 //
-//	create-udp-socket: func(address-family: ip-address-family) -> result<own<udp-socket>,
+//	create-udp-socket: func(address-family: ip-address-family) -> result<udp-socket,
 //	error-code>
 //
 //go:nosplit

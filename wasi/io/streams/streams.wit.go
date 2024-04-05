@@ -156,7 +156,7 @@ func (self InputStream) wasmimport_Skip(len_ uint64, result *cm.OKResult[uint64,
 // Implementations may trap if the `input-stream` is dropped before
 // all derived `pollable`s created with this function are dropped.
 //
-//	subscribe: func() -> own<pollable>
+//	subscribe: func() -> pollable
 //
 //go:nosplit
 func (self InputStream) Subscribe() Pollable {
@@ -402,7 +402,7 @@ func (self OutputStream) wasmimport_Splice(src InputStream, len_ uint64, result 
 // Implementations may trap if the `output-stream` is dropped before
 // all derived `pollable`s created with this function are dropped.
 //
-//	subscribe: func() -> own<pollable>
+//	subscribe: func() -> pollable
 //
 //go:nosplit
 func (self OutputStream) Subscribe() Pollable {
@@ -474,7 +474,7 @@ type Pollable = poll.Pollable
 // An error for input-stream and output-stream operations.
 //
 //	variant stream-error {
-//		last-operation-failed(own<error>),
+//		last-operation-failed(error),
 //		closed,
 //	}
 type StreamError cm.Variant[uint8, Error, Error]

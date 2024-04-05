@@ -35,7 +35,7 @@ type ResponseOutparam = types.ResponseOutparam
 // `response-outparam` before returning, or else the caller will respond
 // with an error on its behalf.
 //
-//	handle: func(request: own<incoming-request>, response-out: own<response-outparam>)
+//	handle: func(request: incoming-request, response-out: response-outparam)
 //
 //go:nosplit
 func Handle(request IncomingRequest, responseOut ResponseOutparam) {

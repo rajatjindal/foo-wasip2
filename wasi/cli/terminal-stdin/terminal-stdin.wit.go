@@ -23,7 +23,7 @@ type TerminalInput = terminalinput.TerminalInput
 // If stdin is connected to a terminal, return a `terminal-input` handle
 // allowing further interaction with it.
 //
-//	get-terminal-stdin: func() -> option<own<terminal-input>>
+//	get-terminal-stdin: func() -> option<terminal-input>
 //
 //go:nosplit
 func GetTerminalStdin() cm.Option[TerminalInput] {

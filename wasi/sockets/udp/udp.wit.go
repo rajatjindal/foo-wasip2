@@ -105,7 +105,7 @@ func (self IncomingDatagramStream) wasmimport_Receive(maxResults uint64, result 
 // Note: this function is here for WASI Preview2 only.
 // It's planned to be removed when `future` is natively supported in Preview3.
 //
-//	subscribe: func() -> own<pollable>
+//	subscribe: func() -> pollable
 //
 //go:nosplit
 func (self IncomingDatagramStream) Subscribe() Pollable {
@@ -271,7 +271,7 @@ func (self OutgoingDatagramStream) wasmimport_Send(datagrams cm.List[OutgoingDat
 // Note: this function is here for WASI Preview2 only.
 // It's planned to be removed when `future` is natively supported in Preview3.
 //
-//	subscribe: func() -> own<pollable>
+//	subscribe: func() -> pollable
 //
 //go:nosplit
 func (self OutgoingDatagramStream) Subscribe() Pollable {
@@ -587,8 +587,8 @@ func (self UDPSocket) wasmimport_StartBind(network_ Network, localAddress IPSock
 // - <https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-connect>
 // - <https://man.freebsd.org/cgi/man.cgi?connect>
 //
-//	stream: func(remote-address: option<ip-socket-address>) -> result<tuple<own<incoming-datagram-stream>,
-//	own<outgoing-datagram-stream>>, error-code>
+//	stream: func(remote-address: option<ip-socket-address>) -> result<tuple<incoming-datagram-stream,
+//	outgoing-datagram-stream>, error-code>
 //
 //go:nosplit
 func (self UDPSocket) Stream(remoteAddress cm.Option[IPSocketAddress]) cm.OKResult[cm.Tuple[IncomingDatagramStream, OutgoingDatagramStream], ErrorCode] {
@@ -608,7 +608,7 @@ func (self UDPSocket) wasmimport_Stream(remoteAddress cm.Option[IPSocketAddress]
 // Note: this function is here for WASI Preview2 only.
 // It's planned to be removed when `future` is natively supported in Preview3.
 //
-//	subscribe: func() -> own<pollable>
+//	subscribe: func() -> pollable
 //
 //go:nosplit
 func (self UDPSocket) Subscribe() Pollable {

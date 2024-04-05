@@ -81,7 +81,7 @@ func wasmimport_Resolution() Duration
 // elapsed, starting at the time at which this function was called.
 // occured.
 //
-//	subscribe-duration: func(when: duration) -> own<pollable>
+//	subscribe-duration: func(when: duration) -> pollable
 //
 //go:nosplit
 func SubscribeDuration(when Duration) Pollable {
@@ -97,7 +97,7 @@ func wasmimport_SubscribeDuration(when Duration) Pollable
 // Create a `pollable` which will resolve once the specified instant
 // occured.
 //
-//	subscribe-instant: func(when: instant) -> own<pollable>
+//	subscribe-instant: func(when: instant) -> pollable
 //
 //go:nosplit
 func SubscribeInstant(when Instant) Pollable {

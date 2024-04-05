@@ -146,8 +146,7 @@ func (self TCPSocket) wasmimport_ResourceDrop()
 // - <https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-accept>
 // - <https://man.freebsd.org/cgi/man.cgi?query=accept&sektion=2>
 //
-//	accept: func() -> result<tuple<own<tcp-socket>, own<input-stream>, own<output-stream>>,
-//	error-code>
+//	accept: func() -> result<tuple<tcp-socket, input-stream, output-stream>, error-code>
 //
 //go:nosplit
 func (self TCPSocket) Accept() cm.OKResult[cm.Tuple3[TCPSocket, InputStream, OutputStream], ErrorCode] {
@@ -194,8 +193,7 @@ func (self TCPSocket) wasmimport_FinishBind(result *cm.ErrResult[struct{}, Error
 
 // FinishConnect represents method "finish-connect".
 //
-//	finish-connect: func() -> result<tuple<own<input-stream>, own<output-stream>>,
-//	error-code>
+//	finish-connect: func() -> result<tuple<input-stream, output-stream>, error-code>
 //
 //go:nosplit
 func (self TCPSocket) FinishConnect() cm.OKResult[cm.Tuple[InputStream, OutputStream], ErrorCode] {
@@ -845,7 +843,7 @@ func (self TCPSocket) wasmimport_StartListen(result *cm.ErrResult[struct{}, Erro
 // Note: this function is here for WASI Preview2 only.
 // It's planned to be removed when `future` is natively supported in Preview3.
 //
-//	subscribe: func() -> own<pollable>
+//	subscribe: func() -> pollable
 //
 //go:nosplit
 func (self TCPSocket) Subscribe() Pollable {

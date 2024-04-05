@@ -59,7 +59,7 @@ type TCPSocket = tcp.TCPSocket
 // - <https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-wsasocketw>
 // - <https://man.freebsd.org/cgi/man.cgi?query=socket&sektion=2>
 //
-//	create-tcp-socket: func(address-family: ip-address-family) -> result<own<tcp-socket>,
+//	create-tcp-socket: func(address-family: ip-address-family) -> result<tcp-socket,
 //	error-code>
 //
 //go:nosplit

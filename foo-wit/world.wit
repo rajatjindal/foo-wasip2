@@ -18,8 +18,5 @@ world foo-world {
     import wasi:filesystem/preopens@0.2.0;
 
     export foo;
-}
-
-world bar-world {
-    import foo;
+    export wasi:cli/run@0.2.0;
 }

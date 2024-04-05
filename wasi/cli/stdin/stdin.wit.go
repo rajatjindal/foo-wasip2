@@ -16,7 +16,7 @@ type InputStream = streams.InputStream
 
 // GetStdin represents function "wasi:cli/stdin@0.2.0#get-stdin".
 //
-//	get-stdin: func() -> own<input-stream>
+//	get-stdin: func() -> input-stream
 //
 //go:nosplit
 func GetStdin() InputStream {
